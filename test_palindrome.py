@@ -13,5 +13,8 @@ class TestPalindrome(unittest.TestCase):
     def test_empty_string_returns_false(self):
         self.assertFalse(is_palindrome(""))
 
+    def test_single_character_is_palindrome(self):
+        self.assertTrue(is_palindrome("a"))
+
 if __name__ == "__main__":
     unittest.main()

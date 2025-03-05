@@ -5,4 +5,8 @@ Validates strings as palindromes.
 def is_palindrome(value):
     if not isinstance(value, str):
         raise ValueError("Input must be a string")
-    return False if value == "" else None
+    if value == "":
+        return False
+    if len(value) == 1:
+        return True
+    return None
