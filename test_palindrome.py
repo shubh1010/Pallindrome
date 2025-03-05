@@ -16,5 +16,8 @@ class TestPalindrome(unittest.TestCase):
     def test_single_character_is_palindrome(self):
         self.assertTrue(is_palindrome("a"))
 
+    def test_two_identical_characters_are_palindrome(self):
+        self.assertTrue(is_palindrome("bb"))
+
 if __name__ == "__main__":
     unittest.main()

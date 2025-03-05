@@ -9,4 +9,6 @@ def is_palindrome(value):
         return False
     if len(value) == 1:
         return True
+    if len(value) == 2 and value[0] == value[1]:
+        return True
     return None
