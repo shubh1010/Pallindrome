@@ -1,6 +1,8 @@
 """
 Validates strings as palindromes.
 """
+from collections import deque
+
 
 def is_palindrome(value):
     if not isinstance(value, str):
@@ -11,4 +13,9 @@ def is_palindrome(value):
         return True
     if len(value) == 2 and value[0] == value[1]:
         return True
-    return None
+    dq = deque(value)
+    while len(dq) > 1:
+        if dq.popleft() != dq.pop():
+            return False
+
+    return True
