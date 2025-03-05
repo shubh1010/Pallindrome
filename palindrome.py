@@ -1,21 +1,17 @@
 """
 Validates strings as palindromes.
 """
-from collections import deque
 
+def is_palindrome(s):
+    cleaned = ''.join(c.lower() for c in s if c.isalnum())
+    return cleaned == cleaned[::-1]
 
-def is_palindrome(value):
-    if not isinstance(value, str):
-        raise ValueError("Input must be a string")
-    if value == "":
-        return False
-    if len(value) == 1:
-        return True
-    if len(value) == 2 and value[0] == value[1]:
-        return True
-    dq = deque(value)
-    while len(dq) > 1:
-        if dq.popleft() != dq.pop():
-            return False
-
-    return True
+while True:
+    user_input = input("Enter a word or phrase to check if it's a palindrome (or type 'exit' to quit): ")
+    if user_input.lower() == "exit":
+        break
+    result = is_palindrome(user_input)
+    if not result:
+        print("No, it's not a palindrome. Try again.")
+    else:
+        print(result)
