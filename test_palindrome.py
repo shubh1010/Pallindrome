@@ -10,5 +10,8 @@ class TestPalindrome(unittest.TestCase):
         with self.assertRaises(ValueError):
             is_palindrome(123)
 
+    def test_empty_string_returns_false(self):
+        self.assertFalse(is_palindrome(""))
+
 if __name__ == "__main__":
     unittest.main()
